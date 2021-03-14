@@ -19,3 +19,5 @@ Les utilisateur·trice·s de la plateforme auront tous un rôle similaire (type 
 - Possibilité d'assigner des "tags" à ses publications afin de les catégoriser
 - Possibilité d'y assigner une localisation (une zone délimitée plus ou moins large indiquant jusqu'où on est prêt·e à se déplacer, par exemple, ou la zone où on souhaite que les personnes viennent pour le projet)
 - Possibilité de chercher des publications au travers des tags et/ou localisations
+- Possibilité de créer des conversations de groupe pour rassembler les personnes qui se rejoignent sur un projet
+- (possibilité de créer des "groupes de projet" qui peuvent ensuite être affichés sur le profil des gens qui y participent ? Pour avoir un aperçu des contributions des gens, un peu comme sur GitHub ?)
