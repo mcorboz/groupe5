@@ -11,6 +11,11 @@
 
 4. Liste des actions possibles pour les différents rôles dans le projet (user, admin, etc.)
 
+### La concurrence
+Dans le domaine de la création d'une plateforme de "rencontre" de développeur·trice·s de jeux vidéo, la concurrence est à la fois énorme est petite
+En effet, se présentent comme concurrents deux types d'acteurs: les boss et les sous-boss.
+Au niveau des boss, il existe premièrement les réseaux sociaux. Moyen simple et rapide basique, une personne souhaitant créer une équipe de développement n'a besoin que de laisser un post avec les informations nécessaire, et les personnes intéressées répondront audit post. De plus, étant donné l'ampleur que possède les réseaux sociaux tel que Twitter, ce type d'annonce sont aisément transmise très rapidement par les utilisateurs. Les re-posts accélèrent encore la vitesse, car ils permettent à encore d'autres utilisateurs de trouver l'annonce originale.
+
 Les utilisateur·trice·s de la plateforme auront tous un rôle similaire (type "user"). Ce rôle offrira les possibilités suivantes:
 - Avoir un profil avec des informations telles que ses intérêts et compétences
 - Publier une annonce de "recherche" (partage d'un projet en cours ou projet désiré, annonçant quelles compétences sont recherchées et sur quelle période)
