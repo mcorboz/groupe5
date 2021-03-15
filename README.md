@@ -1,17 +1,9 @@
 # Plateforme pour rassembler acteurs potentiels du jeu vidéo local
 
-1. Description du projet
+## Description du projet
 
+## Services apparentés (concurrents)
 
-2. Services apparentés (concurrents)
-
-
-3. Bénéfices du projet pour le public cible
-
-
-4. Liste des actions possibles pour les différents rôles dans le projet (user, admin, etc.)
-
-### La concurrence
 Dans le domaine de la création d'une plateforme de "rencontre" de développeur·euse·s de jeux vidéo, la concurrence est à la fois énorme est petite.
 
 En effet, se présentent comme concurrents deux types d'acteurs: les boss et les sous-boss.
@@ -27,8 +19,13 @@ Populaire, la Gamescom de Cologne est le numéro un des salons européen. Même 
 
 Enfin, le dernier sous-boss, celui gardé dans les abysses et se fait toujours plus rares à trouver aisément, est le système des petites annonces dans des journaux, format papier ou numérique. Son majeur défaut est que face aux réseaux sociaux permettant une communication simplifiée, il ne fait plus le poid. Son atout est par contre que ses annonces sont plus officielles et formelles, autrement la personne lanceuse d'annonce n'aurait pas l'occasion d'insérer sa demande.
 
-### Les actions
+
+## Bénéfices du projet pour le public cible
+
+## Liste des actions possibles pour les différents rôles dans le projet (user, admin, etc.)
+
 Les utilisateur·trice·s de la plateforme auront tous un rôle similaire (type "user"). Ce rôle offrira les possibilités suivantes:
+
 - Avoir un profil avec des informations telles que ses intérêts et compétences
 - Publier une annonce de "recherche" (partage d'un projet en cours ou projet désiré, annonçant quelles compétences sont recherchées et sur quelle période)
 - Publier une annonce de "disponibilité" (ce que l'on souhaite faire et le temps que l'on est prêt·e à investir pour, ainsi que la période sur laquelle on peut le faire)
