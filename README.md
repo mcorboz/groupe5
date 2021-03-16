@@ -26,6 +26,7 @@ Enfin, le dernier sous-boss, celui gardé dans les abysses et se fait toujours p
 
 Ce projet a comme intérêt principal de faciliter la connexion entre les individus. Dans l'exemple d'une Gamejam, les personnes présentent pourraient poster leurs intérêts et apports potentiels sur la plateforme et se rassembler avec des personnes correspondant à leurs compétences et idées. Avec un tag du nom de la Gamejam en question, toutes les publications liées à l'événement peuvent être rassemblées et faciles à trouver.
 De cette façon, la création de groupes pour les projets de Gamejam serait facilitée et optimisée, offrant de plus grandes chances à chacun·e de trouver un projet satisfaisant.
+
 En dehors de Gamejam, toute personne souhaitant se lancer dans la création d'un jeu en amateur aura une plateforme pour partager ses idées et trouver d'autres individus cherchant à explorer la création de jeu et/ou à gagner de l'expérience. Il serait désormais possible pour ces gens de former des groupes, augmentant leurs chances de mener leurs projets à bien. A notre connaissance, aucune plateforme ne cible actuellement la création amatrice de jeu vidéo d'une telle façon.
 
 
