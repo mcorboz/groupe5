@@ -1,4 +1,5 @@
 import '/lib/router.js';
-// leaving out the extension here imports both .html and .js,
-// making this more readable and less error-prone
+// leaving out the extension here is apparently necessary
+// or at least i haven't figured out another way, seems
+// clean enough
 import '/imports/ui/body';
