@@ -5,3 +5,4 @@ import './contact_info/contact_info.html';
 import './Home_page/Home_page.html';
 import './Nav/Nav.html';
 import './Profile_page/Profile_page.html';
+import './project/new_project.html';
