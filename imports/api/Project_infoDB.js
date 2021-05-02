@@ -1,7 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 
-
 // Exporter une constante pour la base de données
 export const Elements = new Mongo.Collection("elements");
 

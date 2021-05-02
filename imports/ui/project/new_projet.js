@@ -15,10 +15,9 @@ import './project_elements/tags_list';
 
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
-Template.newproject.events({
+Template.New_project.events({
     'click #creerProjet'(event) {
         event.preventDefault();
-        console.log("aled");
         // Récupérer le contenu des éléments HTML
         let dateStart = document.getElementById("date_start").value;
         let dateEnd = document.getElementById("date_end").value;
@@ -32,5 +31,6 @@ Template.newproject.events({
         };
         // Appeler la méthode 'ajoutProjet' (dans Project_infoDB.js)
         Meteor.call('ajoutProjet', nouveauProjet);
+        console.log("Hello");
     }
 });
