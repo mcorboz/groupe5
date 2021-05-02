@@ -5,7 +5,7 @@ import { Meteor } from "meteor/meteor";
 import { Elements } from "../../api/Project_infoDB.js";
 
 // Importer les templates associés
-import './New_project.html';
+import './new_project.html';
 import './project_elements/Date_end';
 import './project_elements/Date_start';
 import './project_elements/Project_name';
