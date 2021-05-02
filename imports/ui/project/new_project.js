@@ -8,11 +8,11 @@ import { Elements } from "../../api/Project_infoDB.js";
 import './new_project.html';
 import './project_elements/Date_end';
 import './project_elements/Date_start';
-import './project_elements/project_name';
-import './project_elements/tags_choice';
-import './project_elements/tags_list';
+import './project_elements/Project_name';
+import './project_elements/Tags_choice';
+import './project_elements/Tags_list';
 
-
+// Non meteor-related JS pour sélectionner 
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
 Template.newproject.events({
