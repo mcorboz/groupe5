@@ -6,11 +6,11 @@ import { Elements } from "../../api/Project_infoDB.js";
 
 // Importer les templates associés
 import './new_project.html';
-import './project_elements/Date_end';
-import './project_elements/Date_start';
-import './project_elements/project_name';
-import './project_elements/tags_choice';
-import './project_elements/tags_list';
+import './project_elements/Date_end.js';
+import './project_elements/Date_start.js';
+import './project_elements/project_name.js';
+import './project_elements/tags_choice.js';
+import './project_elements/tags_list.js';
 
 
 

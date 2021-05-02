@@ -1,0 +1,1 @@
+import './tags_choice.html';

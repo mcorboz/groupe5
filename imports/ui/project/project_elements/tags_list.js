@@ -1,0 +1,1 @@
+import './tags_list.html';
