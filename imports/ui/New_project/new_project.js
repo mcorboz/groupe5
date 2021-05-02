@@ -15,7 +15,7 @@ import './project_elements/Tags_list';
 // Non meteor-related JS pour sélectionner 
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
-Template.newproject.events({
+Template.New_project.events({
     'click #creerProjet'(event) {
         event.preventDefault();
         console.log("aled");
