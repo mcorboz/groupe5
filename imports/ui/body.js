@@ -11,4 +11,4 @@ import './project/project_elements/Date_start.js';
 import './project/project_elements/project_name.js';
 import './project/project_elements/tags_choice.js';
 import './project/project_elements/tags_list.js';
-import './Profilecreation/profileC.js';
+import './Profile_creation/Profile_creation.js';
