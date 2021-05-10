@@ -41,6 +41,7 @@ livedata@1.0.18
 logging@1.2.0
 meteor@1.9.3
 meteor-base@1.4.0
+meteortoys:toykit@10.0.0
 minifier-css@1.5.3
 minifier-js@2.6.0
 minimongo@1.6.1
@@ -53,6 +54,7 @@ mongo@1.10.1
 mongo-decimal@0.1.2
 mongo-dev-server@1.1.0
 mongo-id@1.0.7
+msavin:mongol@10.0.1
 npm-mongo@3.8.1
 observe-sequence@1.0.16
 ordered-dict@1.1.0

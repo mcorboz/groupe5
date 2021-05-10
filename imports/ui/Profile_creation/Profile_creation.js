@@ -1,7 +1,7 @@
-import '../templates/profilecreation';
+import './Profile_creation.html';
 
 
-Template.profilecreation.helpers({
+Template.Profile_creation.helpers({
 
     username() {
         return Meteor.user().username;
