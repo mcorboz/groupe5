@@ -1,4 +1,5 @@
-import '../templates/Profilecreation/profileC.html';
+import '../templates/profilecreation';
+
 
 Template.profilecreation.helpers({
 
