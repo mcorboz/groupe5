@@ -2,12 +2,19 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 
 // Exporter une constante pour la base de données
-export const Elements = new Mongo.Collection("elements");
+export const Projects = new Mongo.Collection("projects");
 
 // Autoriser l'accès aux données par certains templates
 if(Meteor.isServer) {
-    Meteor.publish('elements', function publierProjet() {
-        return Elements.find({});
+    Meteor.publish('projects.byId', function(_id) {
+        // check type of id
+        new SimpleSchema({
+            _id: { type: String },
+        }).validate({ _id });
+
+        return Projects.findOne({
+            _id, //FIXME
+        });
     });
 }
 
@@ -15,7 +22,7 @@ if(Meteor.isServer) {
 Meteor.methods({
     // Méthode pour ajouter un nouveau projet à la base de données
     'ajoutProjet'(objet) {
-        let ajout = Elements.insert({
+        let ajout = Projects.insert({
             objet
         });
         console.log("Nouveau projet enregistré");
