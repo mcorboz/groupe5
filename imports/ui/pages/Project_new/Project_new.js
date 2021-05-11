@@ -7,7 +7,7 @@ import './Project_new.html';
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
 Template.Project_new.events({
-    'submit.project_new'(event) {
+    'submit .project_new'(event) {
         // prevent default HTTP form submission
         event.preventDefault();
 
@@ -37,7 +37,6 @@ Template.Project_new.events({
             genreTags,
         };
 
-        // 'project.add' is defined in /imports/api/projects.js
         Meteor.call('project.add', projet, (err, res) => {
             if (err) {
                 // TODO: maybe do better in terms of warning, this just displays

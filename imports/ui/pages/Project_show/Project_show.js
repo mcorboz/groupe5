@@ -1,5 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Projects } from '/imports/api/projects';
+import { Projects } from '/imports/api/ProjectsCollection.js';
 
 import './Project_show.html';
 
