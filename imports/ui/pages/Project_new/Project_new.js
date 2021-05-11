@@ -40,7 +40,7 @@ Template.Project_new.events({
         // 'project.add' is defined in /imports/api/projects.js
         Meteor.call('project.add', projet, (err, res) => {
             if (err) {
-                // FIXME: maybe do better in terms of warning, this just sends
+                // TODO: maybe do better in terms of warning, this just displays
                 // HTTP error code 500 (internal server error) for all errors
                 // including schema validation
                 alert(err);

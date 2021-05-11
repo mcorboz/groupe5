@@ -12,39 +12,38 @@ Projects.schema = new SimpleSchema({
         min: 4,
         max: 40,
     },
-    dateStart: { type: String }, // enforcing Date as the type complicates things
+    dateStart: { type: String }, // enforcing `Date` as the type complicates things
     dateEnd: { type: String },
     technicalTags: { type: Array },
-    "technicalTags.$": { type: String },
+    'technicalTags.$': { type: String },
     genreTags: { type: Array },
-    "genreTags.$": { type: String },
+    'genreTags.$': { type: String },
 });
 
-// Autoriser l'accès aux données par certains templates
+// publications for the Projects collection
 if(Meteor.isServer) {
     Meteor.publish('projects.byId', function(projectId) {
         // check type of id
         new SimpleSchema({
-            id: { type: String },
-        }).validate({ projectId });
+            _id: { type: String },
+        }).validate({ _id: projectId });
 
-        return Projects.findOne({
-            _id: projectId //FIXME
-        });
+        // return cursor into collection
+        return Projects.find({ _id: projectId });
+    });
+
+    // method definitions for the Projects collection
+    Meteor.methods({
+        // add a new project to the collection
+        'project.add'(project) {
+            // make sure the object fits in the collection's schema
+            Projects.schema.validate(project);
+
+            // add the project to the collection
+            let id = Projects.insert(project);
+
+            // return the newly-added object's ID
+            return id;
+        }
     });
 }
-
-// Ecriture des méthodes
-Meteor.methods({
-    // Méthode pour ajouter un nouveau projet à la base de données
-    'project.add'(project) {
-        // make sure the object fits in the collection's schema
-        Projects.schema.validate(project);
-
-        // add the project to the collection
-        let id = Projects.insert(project);
-
-        // return the newly-added object's ID
-        return id;
-    }
-});

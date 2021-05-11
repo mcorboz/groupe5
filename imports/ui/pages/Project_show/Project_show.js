@@ -1,4 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Projects } from '/imports/api/projects';
 import './Project_show.html';
 import '/imports/ui/components/NotFound/NotFound.html';
 
@@ -19,11 +20,18 @@ Template.Project_show.onCreated(function() {
 });
 
 Template.Project_show.helpers({
-    getProjectId() {
-        return Template.instance().getProjectId();
+    projectId() {
+        _id = Template.instance().getProjectId();
+        console.log(_id);
+        console.log(Projects.find({})[0]);
+        console.log(Projects.findOne({ _id }));
+        return _id;
     },
     
-    getProjectName() {
-        return 'nameTest';
-    }
+    projectName() {
+        const project = Projects.findOne({
+            _id: Template.instance().getProjectId()
+        });
+        return project.name;
+    },
 });
