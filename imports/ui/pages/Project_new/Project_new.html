@@ -1,22 +1,26 @@
 <template name="Project_new">
     <h1>Créer un nouveau projet</h1>
 
-    <div>A quelle date voulez-vous commencer votre projet ?</div>
-    <input type="date" id="date_start">
+    <form action="" class="project_new">
+        <div>
+            <label for="date_start">A quelle date voulez-vous commencer votre projet ?</label>
+            <input type="date" name="date_start" id="date_start">
+        </div>
 
-    <div>A quelle date voulez-vous terminer votre projet ?</div>
-    <input type="date" id="date_end">
+        <div>
+            <label for="date_end">A quelle date voulez-vous terminer votre projet ?</label>
+            <input type="date" name="date_end" id="date_end">
+        </div>
 
-    <div>Comment s'appelle votre projet ?</div>
-    <input type="text" id="project_name">
+        <div>
+            <label for="project_name">Comment s'appelle votre projet ?</label>
+            <input type="text" placeholder="Nom" name="project_name" id="project_name">
+        </div>
 
-    <!--FIXME add tags list
-    <div>Veuillez sélectionner les tags correspondant à votre projet</div>
-    -->
+        <!-- TODO add tags, members, etc. -->
 
-    <!-- All the templates that will appear here
-    {{> poject_members}} 
-    {{> create_new}} -->
-
-    <button id="creerProjet">Créer</button>
+        <div>
+            <input type="submit" value="Créer">
+        </div>
+    </form>
 </template>
