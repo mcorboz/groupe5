@@ -20,9 +20,10 @@ Template.Project_show.onCreated(function() {
 
 Template.Project_show.helpers({
     projectExists() {
-        return !!Projects.findOne({
+        const project = Projects.findOne({
             _id: FlowRouter.getParam('_id'),
         });
+        return !!project;
     },
 
     projectId() {
@@ -35,5 +36,19 @@ Template.Project_show.helpers({
             _id: FlowRouter.getParam('_id'),
         });
         return project.name;
+    },
+
+    projectDateStart() {
+        const project = Projects.findOne({
+            _id: FlowRouter.getParam('_id'),
+        });
+        return project.dateStart;
+    },
+
+    projectDateEnd() {
+        const project = Projects.findOne({
+            _id: FlowRouter.getParam('_id'),
+        });
+        return project.dateEnd;
     },
 });

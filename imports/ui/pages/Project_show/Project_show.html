@@ -1,8 +1,23 @@
 <template name="Project_show">
     {{#if Template.subscriptionsReady}}
         {{#if projectExists}}
-            <h1>View project: {{projectId}}</h1>
-            <p>name: {{projectName}}</p>
+            <h1>View project: {{projectName}}</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>project ID:</td>
+                        <td>{{projectId}}</td>
+                    </tr>
+                    <tr>
+                        <td>start date:</td>
+                        <td>{{projectDateStart}}</td>
+                    </tr>
+                    <tr>
+                        <td>end date:</td>
+                        <td>{{projectDateEnd}}</td>
+                    </tr>
+                </tbody>
+            </table>
         {{else}}
             {{> NotFound}}
         {{/if}}
