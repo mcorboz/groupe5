@@ -1,8 +1,16 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
+import SimpleSchema from 'simpl-schema';
 
-// Exporter une constante pour la base de données
+// export the database for importers
 export const Projects = new Mongo.Collection("projects");
+
+// define the schema of the Projects collection
+Projects.schema = new SimpleSchema({
+    name: { type: String },
+    dateStart: { type: Date },
+    dateEnd: { type: Date },
+});
 
 // Autoriser l'accès aux données par certains templates
 if(Meteor.isServer) {

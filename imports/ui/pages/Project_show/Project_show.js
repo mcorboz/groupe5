@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import './Project_show.html';
+import '/imports/ui/components/NotFound/NotFound.html';
 
 //const subscriptionHandle = Meteor.subscribe('projects.byId', FlowRouter.getParam('_id'));
 
