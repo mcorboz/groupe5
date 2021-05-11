@@ -14,7 +14,7 @@ if(Meteor.isServer) {
 // Ecriture des méthodes
 Meteor.methods({
     // Méthode pour ajouter un nouveau projet à la base de données
-    'ajoutProjet'(objet){
+    'ajoutProjet'(objet) {
         let ajout = Elements.insert({
             objet
         });
@@ -22,4 +22,4 @@ Meteor.methods({
         console.log(objet);
         return ajout;
     }
-})
+});

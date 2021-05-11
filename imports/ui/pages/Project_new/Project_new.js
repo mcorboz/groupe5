@@ -2,20 +2,13 @@ import { Template } from "meteor/templating";
 import { Meteor } from "meteor/meteor";
 
 // Importer la base de donnees
-import { Elements } from "../../api/Project_infoDB.js";
+import { Elements } from "/imports/api/Project_infoDB.js";
 
 // Importer les templates associés
-import './new_project.html';
-import './project_elements/Date_end.js';
-import './project_elements/Date_start.js';
-import './project_elements/project_name.js';
-import './project_elements/tags_choice.js';
-import './project_elements/tags_list.js';
-
-
+import './Project_new.html';
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
-Template.New_project.events({
+Template.Project_new.events({
     'click #creerProjet'(event) {
         event.preventDefault();
         // Récupérer le contenu des éléments HTML
@@ -25,12 +18,12 @@ Template.New_project.events({
         // Still have to add the tags choice, which will be an array
         
         let nouveauProjet = {
-            datestart: dateStart,
-            dateend: dateEnd,
-            projectname: projectName,
+            dateStart,
+            dateEnd,
+            projectName,
         };
+
         // Appeler la méthode 'ajoutProjet' (dans Project_infoDB.js)
         Meteor.call('ajoutProjet', nouveauProjet);
-        console.log("Hello");
     }
 });
