@@ -1,0 +1,3 @@
+https://guide.meteor.com/routing.html#404s
+
+This component is to be rendered when the URL is of the correct form, but leads to no valid data. For example, `/project/12345` may render this template instead of the usual project information if no template with ID `12345` exists in the database. See the similarly-named template in `/imports/ui/pages` for the page that should be rendered by `FlowRouter.notFound`, that is, when the URL is not valid at all.
