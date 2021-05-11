@@ -2,3 +2,7 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+form.project_new > div {
+  margin-block: 0.5rem;
+}
