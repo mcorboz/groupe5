@@ -9,7 +9,7 @@ import './Project_new.html';
 
 // Fonction pour créer le projet (rassemble toutes les informations pour envoyer dans la DB)
 Template.Project_new.events({
-    'click #creerProjet'(event) {
+    'submit.project_new'(event) {
         event.preventDefault();
         // Récupérer le contenu des éléments HTML
         let dateStart = document.getElementById("date_start").value;
