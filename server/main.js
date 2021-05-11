@@ -1,9 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 
-// Importer la base de donnée
-import '/imports/api/ProjectsCollection.js';
+// import the Projects collection and the associated methods and publications
+import { Projects } from '/imports/api/ProjectsCollection';
+import '/imports/api/ProjectsPublications.js';
 import '/imports/api/ProjectsMethods.js';
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+Meteor.startup(function() {
+    if (Meteor.isServer) {
+        console.log('Hi from the server.');
+    }
+})

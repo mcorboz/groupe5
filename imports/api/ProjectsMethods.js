@@ -4,7 +4,7 @@ import { Projects } from './ProjectsCollection.js';
 // method definitions for the Projects collection
 Meteor.methods({
     // add a new project to the collection
-    'project.add'(project) {
+    'projects.add'(project) {
         // make sure the object fits in the collection's schema
         Projects.schema.validate(project);
 

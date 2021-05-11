@@ -1,4 +1,6 @@
 import { Meteor } from 'meteor/meteor';
+import SimpleSchema from 'simpl-schema';
+
 import { Projects } from './ProjectsCollection.js';
 
 Meteor.publish('projects.byId', function(projectId) {
