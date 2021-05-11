@@ -19,6 +19,12 @@ Template.Project_show.onCreated(function() {
 });
 
 Template.Project_show.helpers({
+    projectExists() {
+        return !!Projects.findOne({
+            _id: FlowRouter.getParam('_id'),
+        });
+    },
+
     projectId() {
         _id = FlowRouter.getParam('_id');
         return _id;

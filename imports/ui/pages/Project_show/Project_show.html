@@ -1,10 +1,12 @@
 <template name="Project_show">
-    <h1>View project: {{projectId}}</h1>
-    <p>name: {{projectName}}</p>
-    <!--
-    {{#if getProjectId}}
+    {{#if Template.subscriptionsReady}}
+        {{#if projectExists}}
+            <h1>View project: {{projectId}}</h1>
+            <p>name: {{projectName}}</p>
+        {{else}}
+            {{> NotFound}}
+        {{/if}}
     {{else}}
-        {{> NotFound}}
+        <p>Loading...</p>
     {{/if}}
-    -->
 </template>
