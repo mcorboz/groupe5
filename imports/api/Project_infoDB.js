@@ -6,14 +6,14 @@ export const Projects = new Mongo.Collection("projects");
 
 // Autoriser l'accès aux données par certains templates
 if(Meteor.isServer) {
-    Meteor.publish('projects.byId', function(_id) {
+    Meteor.publish('projects.byId', function(projectId) {
         // check type of id
         new SimpleSchema({
-            _id: { type: String },
-        }).validate({ _id });
+            id: { type: String },
+        }).validate({ projectId });
 
         return Projects.findOne({
-            _id, //FIXME
+            _id: projectId //FIXME
         });
     });
 }

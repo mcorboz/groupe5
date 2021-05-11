@@ -1,3 +1,8 @@
 <template name="Project_show">
-    <h1>View project: {{getProjectId}}</h1>
+    {{#if getProjectId}}
+        <h1>View project: {{getProjectName}}</h1>
+        <p>project ID: {{getProjectId}}</p>
+    {{else}}
+        {{> Error_404}}
+    {{/if}}
 </template>
