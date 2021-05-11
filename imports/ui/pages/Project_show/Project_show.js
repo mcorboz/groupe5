@@ -1,9 +1,9 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Projects } from '/imports/api/projects';
-import './Project_show.html';
-import '/imports/ui/components/NotFound/NotFound.html';
 
-//const subscriptionHandle = Meteor.subscribe('projects.byId', FlowRouter.getParam('_id'));
+import './Project_show.html';
+
+import '/imports/ui/components/NotFound/NotFound.js';
 
 Template.Project_show.onCreated(function() {
     this.getProjectId = () => FlowRouter.getParam('_id');
