@@ -23,6 +23,3 @@ kadira:flow-router
 kadira:blaze-layout
 ostrio:flow-router-extra
 msavin:mongol
-accounts-ui
-accounts-password
-accounts-github
