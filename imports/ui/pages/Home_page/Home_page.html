@@ -1,8 +1,11 @@
 <template name="Home_page">
     <p>Home page of our project</p>
+    {{#if currentUser}}
     <a href="{{pathFor 'Profile.show'}}">check out the profile page</a>
     <a href="{{pathFor 'Project.new'}}">Clique ici pour créer un nouveau projet</a>
     <a href="{{pathFor 'Settings.call'}}" class="setting">Paramètres</a>
+    {{/if}}
+    {{> loginButtons}}
 </template>
 
 

@@ -1,4 +1,12 @@
 import './Profile_creation.html';
+
+if (Meteor.isClient) {
+    Accounts.ui.config({
+        // register with a username rather than email address
+        passwordSignupFields: "USERNAME_ONLY"
+    });
+}
+
 /*
 Template.Profile_creation.helpers({
     username() {
