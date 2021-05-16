@@ -26,3 +26,5 @@ msavin:mongol
 accounts-ui
 accounts-base
 accounts-password
+accounts-github
+github-config-ui
