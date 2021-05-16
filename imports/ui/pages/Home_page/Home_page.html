@@ -5,7 +5,10 @@
     <a href="{{pathFor 'Project.new'}}">Clique ici pour créer un nouveau projet</a>
     <a href="{{pathFor 'Settings.call'}}" class="setting">Paramètres</a>
     {{/if}}
-    {{> loginButtons}}
+    <div>
+        Vous n'avez pas encore de profil ?
+        <a href="{{pathFor 'New.account'}}" class="setting">Créez-en un!</a>
+    </div>
 </template>
 
 
