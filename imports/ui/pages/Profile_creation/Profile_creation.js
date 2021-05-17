@@ -1,3 +1,7 @@
+import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+
 import './Profile_creation.html';
 
 Template.Profile_creation.events({
@@ -13,18 +17,18 @@ Template.Profile_creation.events({
       
 
         // create the account object that we will send
-        let new_account = {
-            pseudo : pseudo,
-            email : email,
-            password : password,
+        let account = {
+            pseudo,
+            email,
+            password,
         };
 
-        Meteor.call('accounts.add', new_account, (err, res) => {
+        Meteor.call('accounts.add', account, (err, res) => {
             if (err) {
                 alert(err);
             } else {
                 console.log(`Nouveau compte enregistré! ID: ${ res }`);
-                console.log(new_account);
+                console.log(account);
 
                 // redirect the user to the profile page
                 const params = { _id: res };
