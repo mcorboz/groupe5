@@ -13,5 +13,6 @@ Meteor.methods({
 
         // return the newly-added object's ID
         return id;
-    }
+    },
 });
+

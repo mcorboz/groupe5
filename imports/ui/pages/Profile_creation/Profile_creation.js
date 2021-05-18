@@ -31,8 +31,8 @@ Template.Profile_creation.events({
                 console.log(account);
 
                 // redirect the user to the profile page
-                const params = { _id: res };
-                FlowRouter.go('Profile.show', params);
+                //const params = { _id: res };
+                FlowRouter.go('Profile.show');
             }
         });
             }
