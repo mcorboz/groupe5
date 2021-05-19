@@ -9,6 +9,12 @@ form.project_new > div {
 
 .setting {
   position: absolute;
+  right: 300px;
+  top : 25px;
+}
+
+.connexion {
+  position: absolute;
   right: 75px;
   top : 25px;
 }
