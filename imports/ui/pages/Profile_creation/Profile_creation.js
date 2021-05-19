@@ -4,6 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import './Profile_creation.html';
 
+
 Template.Profile_creation.onCreated(function () {
 	this.new = new ReactiveVar(false);
 });
