@@ -43,6 +43,28 @@ Template.Profile_creation.events({
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
         let password2 = document.getElementById("password2").value;
+
+        // Interets
+        let interets = document.getElementsByName("interets");
+        let interets_sel = {};
+        interets.forEach(element => {
+            if (element.option[element.selectedIndex].value != '-') {
+                // Récupérer la valeur sélectionnée
+                let valeur = element.options[element.selectedIndex].value;
+                // Récupérer le nom de l'intérêt
+                let interet_nom = element[element.selectedIndex].id;
+                let nouvel_interet = [];
+                nouvel_interet.append(interet_nom);
+                nouvel_interet.append(valeur);
+                interets_sel.append(nouvel_interet);
+            }
+        });
+        console.log(interets_sel);
+
+
+
+
+
         // AJOUTER COMPETENCES ET INTERETS
 		if (password.length > 5) {
 			if (password == password2) {
