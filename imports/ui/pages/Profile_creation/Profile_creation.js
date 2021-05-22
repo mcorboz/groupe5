@@ -38,34 +38,58 @@ Template.Profile_creation.events({
     // création d'un nouvaeu compte
     'click #create_account'(event) {
 		event.preventDefault();
-        // Récup toutes les infos
+        // Récup les éléments HTML
         let username = document.getElementById("pseudo").value;
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
         let password2 = document.getElementById("password2").value;
 
         // Interets
+        // Récupérer tous les intérêts
         let interets = document.getElementsByName("interets");
-        let interets_sel = {};
+        // Créer un array vide pour y stocker les intérêts sélectionnés
+        let interets_sel = [];
+        // Pour chaque intérêt
         interets.forEach(element => {
-            if (element.option[element.selectedIndex].value != '-') {
+            // Si sa valeur est différente de -
+            if (element.value != '-') {
                 // Récupérer la valeur sélectionnée
-                let valeur = element.options[element.selectedIndex].value;
+                let valeur = element.value;
                 // Récupérer le nom de l'intérêt
-                let interet_nom = element[element.selectedIndex].id;
+                let interet_nom = element.id;
+                // Créer un array avec le nom et la valeur de l'intérêt
                 let nouvel_interet = [];
-                nouvel_interet.append(interet_nom);
-                nouvel_interet.append(valeur);
-                interets_sel.append(nouvel_interet);
-            }
+                nouvel_interet.push(interet_nom);
+                nouvel_interet.push(valeur);
+                // Et les ajouter à l'objet des intérêts sélectionnés
+                interets_sel.push(nouvel_interet);
+            }    
         });
-        console.log(interets_sel);
 
+        // Competences
+        // Récupérer toutes les competences
+        let competences = document.getElementsByName("competences");
+        // Créer un array vide pour y stocker les compétences sélectionnées
+        let competences_sel = [];
+        // Pour chaque compétence
+        competences.forEach(element => {
+            // Si sa valeur est différente de -
+            if (element.value != '-') {
+                // Récupérer la valeur sélectionnée
+                let valeur = element.value;
+                // Récupérer le nom de la compétence
+                let competence_nom = element.id;
+                // Créer un array avec le nom et la valeur de la compétence
+                let nouvelle_competence = [];
+                nouvelle_competence.push(competence_nom);
+                nouvelle_competence.push(valeur);
+                // Et les ajouter à l'objet des compétences sélectionnées
+                competences_sel.push(nouvelle_competence);
+            }    
+        });
+        
 
-
-
-
-        // AJOUTER COMPETENCES ET INTERETS
+        // Vérifications pour que toutes les informations nécessaires soient entrées par le user
 		if (password.length > 5) {
 			if (password == password2) {
 				if (username != '' && password != '' && email != '') {
@@ -81,12 +105,17 @@ Template.Profile_creation.events({
                     if (validEmail(email) == false) {
                         alert('Veuillez entrer une adresse mail valide')
                     } else {
+                        // Créer le compte
                         Accounts.createUser(
                             {
                                 username: username,
                                 password: password,
-                                email: email
-                                // AJOUTER LES COMPETENCES ET INTERETS
+                                email: email,
+                                createdAt: new Date,
+                                profile: {
+                                    intérêts: interets_sel,
+                                    compétences: competences_sel,
+                                },
                             },
                             (error) => {
                                 if (error) {
