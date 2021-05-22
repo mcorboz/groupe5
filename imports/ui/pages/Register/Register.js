@@ -5,113 +5,81 @@ import './Register.html';
 
 Template.Register.events({
     // création d'un nouveau compte
-    'click #create_account'(event) {
-		event.preventDefault();
-        // Récup les éléments HTML
-        let username = document.getElementById("pseudo").value;
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-        let password2 = document.getElementById("password2").value;
+    'submit .register'(event) {
+        // don't do default form HTTP request
+        event.preventDefault();
 
-        // Interets
-        // Récupérer tous les intérêts
-        let interets = document.getElementsByName("interets");
-        // Créer un array vide pour y stocker les intérêts sélectionnés
-        let interets_sel = [];
-        // Pour chaque intérêt
-        interets.forEach(element => {
-            // Si sa valeur est différente de -
-            if (element.value != '-') {
-                // Récupérer la valeur sélectionnée
-                let valeur = element.value;
-                // Récupérer le nom de l'intérêt
-                let interet_nom = element.id;
-                // Créer un array avec le nom et la valeur de l'intérêt
-                let nouvel_interet = [];
-                nouvel_interet.push(interet_nom);
-                nouvel_interet.push(valeur);
-                // Et les ajouter à l'objet des intérêts sélectionnés
-                interets_sel.push(nouvel_interet);
-            }    
-        });
+        // get basic user input values
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const password_confirm = document.getElementById("password-confirm").value;
 
-        // Competences
-        // Récupérer toutes les competences
-        let competences = document.getElementsByName("competences");
-        // Créer un array vide pour y stocker les compétences sélectionnées
-        let competences_sel = [];
-        // Pour chaque compétence
-        competences.forEach(element => {
-            // Si sa valeur est différente de -
-            if (element.value != '-') {
-                // Récupérer la valeur sélectionnée
-                let valeur = element.value;
-                // Récupérer le nom de la compétence
-                let competence_nom = element.id;
-                // Créer un array avec le nom et la valeur de la compétence
-                let nouvelle_competence = [];
-                nouvelle_competence.push(competence_nom);
-                nouvelle_competence.push(valeur);
-                // Et les ajouter à l'objet des compétences sélectionnées
-                competences_sel.push(nouvelle_competence);
-            }    
-        });
-        
-
-        // Vérifications pour que toutes les informations nécessaires soient entrées par le user
-		if (password.length > 5) {
-			if (password == password2) {
-				if (username != '' && password != '' && email != '') {
-                    // vérifier si l'adresse email est valide
-                    function validEmail(value) {
-                        const filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                        if (filter.test(value)) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                    if (validEmail(email) == false) {
-                        alert('Veuillez entrer une adresse mail valide')
-                    } else {
-                        // Créer le compte
-                        Accounts.createUser(
-                            {
-                                username: username,
-                                password: password,
-                                email: email,
-                                createdAt: new Date,
-                                profile: {
-                                    intérêts: interets_sel,
-                                    compétences: competences_sel,
-                                },
-                            },
-                            (error) => {
-                                if (error) {
-                                    alert(error.message);
-                                } else {
-                                    FlowRouter.go('Profile.show');
-                                }
-                            },
-                        );
-                    }
-				} else {
-					if (username == ''){
-                        alert('Veuillez choisir un pseudo');
-                    }
-                    if (password == ''){
-                        alert('Veuillez inscrire un mot de passe');
-                    }
-                    if (email == ''){
-                        alert('Veuillez ajouter une adresse email');
-                    }
-				}
-			} else {
-				alert('Vos deux mots de passe ne sont pas identiques');
-			}
-		} else {
+        // check user input validity
+        const email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (password.length < 6) {
 			alert('Votre mot de passe est trop court (min. 6 caractères)');
-		}
+            return;
+        } else if (password !== password_confirm) {
+            alert('Les mots de passes entrés ne correspondent pas.');
+            return;
+        } else if (username.length < 5) {
+            alert('Votre nom d\'utilisateur.ice est trop court (min. 5 caractères)');
+        } else if (!email_filter.test(email)) {
+            alert('Veuillez entrer une adresse mail valide');
+            return;
+        }
+    
+        // get interests user input values
+        let interests_selection = []; // FIXME should probably be an object and not an array
+        // section in which all interests sliders are
+        const interests = document.getElementById("interests");
+        // for each interest slider
+        interests.querySelectorAll('input[type="range"]').forEach((element) => {
+            let name = element.id;
+            let value = element.value;
+            // create a new array with the name and value of the interest
+            // FIXME should be an object and not an array
+            let interest_new = [];
+            interest_new.push(name);
+            interest_new.push(value);
+            interests_selection.push(interest_new);
+        });
+
+        // get skills user input values 
+        let skills_selection = []; // FIXME should probably be an object and not an array
+        // section in which all skills sliders are
+        const skills = document.getElementById("skills");
+        // for each skill slider
+        skills.querySelectorAll('input[type="range"]').forEach((element) => {
+            let name = element.id;
+            let value = element.value;
+            // create a new array with the name and value of the skill
+            // FIXME should be an object and not an array
+            let skill_new = [];
+            skill_new.push(name);
+            skill_new.push(value);
+            skills_selection.push(skill_new);
+        });
+
+        // add user to the accounts collection
+        // FIXME probably incorrect? should be done on the server via meteor method call or smth?
+        const user = {
+            username,
+            password,
+            email,
+            //createdAt: new Date, // FIXME is this necessary?
+            profile: {
+                interests: interests_selection,
+                skills: skills_selection,
+            },
+        };
+        Accounts.createUser(user, (error) => {
+            if (error) {
+                alert(error.message);
+            } else {
+                FlowRouter.go('Profile.show');
+            }
+        });
 	},
 });
-

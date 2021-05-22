@@ -1,6 +1,5 @@
 <template name="Home_page">
   <div class="Home_page" id="Home">
-    <p>Home page of our project</p>
     {{#if currentUser}}
       <a href="{{pathFor 'Profile.show'}}">check out the profile page</a>
       <a href="{{pathFor 'Project.new'}}">Clique ici pour créer un nouveau projet</a>

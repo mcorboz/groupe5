@@ -1,152 +1,88 @@
 <template name="Register">
-  <div>
+  <form action="" class="register">
     <h1>Créer un nouveau compte</h1>
 
     <p>Vous avez déjà un compte? <a href="{{pathFor 'Login'}}">Connectez-vous</a></p>
 
     <p>Pseudonyme :</p>
-    <input type="text" id="pseudo">
+    <input type="text" id="username">
 
     <p>Mot de passe :</p>
     <input type="password" id="password">
 
     <p>Confirmation du mot de passe :</p>
-    <input type="password" id="password2">
+    <input type="password" id="password-confirm">
 
     <p>Adresse email :</p>
     <input type="email" id="email">
 
-    <p>Intérêts :</p>
-    <ul>
-      <li>
-        <span>Programmation</span>
-        <select name="interets" id="IProgrammation">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Dessin</span>
-        <select name="interets" id="IDessin">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Sound Design</span>
-        <select name="interets" id="ISound Design">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Game Design</span>
-        <select name="interets" id="IGame Design">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Narration</span>
-        <select name="interets" id="INarration">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-    </ul>
-    <br><br>
+    <section id="interests">
+      <p>Intérêts :</p>
+      <ul>
+        <li>
+          <input type="range" min="1" max="6"
+                id="interests-programming">
+          <label for="interests-programming">Programmation</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="interests-visualarts">
+          <label for="interests-visualarts">Arts visuels</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="interests-sounddesign">
+          <label for="interests-sounddesign">Sound design</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="interests-gamedesign">
+          <label for="interests-gamedesign">Game design</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="interests-narration">
+          <label for="interests-narration">Narration</label>
+        </li>
+      </ul>
+    </section>
 
-    <p>Compétences :</p>
-    <ul>
-      <li>
-        <span>Programmation</span>
-        <select name="competences" id="CProgrammation">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Dessin</span>
-        <select name="competences" id="CDessin">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Sound Design</span>
-        <select name="competences" id="CSound Design">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Game Design</span>
-        <select name="competences" id="CGame Design">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-      <li>
-        <span>Narration</span>
-        <select name="competences" id="CNarration">
-          <option value="-">-</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </li>
-    </ul>
+    <br>
+    <br>
+
+    <section id="skills">
+      <p>Compétences :</p>
+      <ul>
+        <li>
+          <input type="range" min="1" max="6"
+                id="skills-programming">
+          <label for="skills-programming">Programmation</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="skills-visualarts">
+          <label for="skills-visualarts">Arts visuels</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="skills-sounddesign">
+          <label for="skills-sounddesign">Sound design</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="skills-gamedesign">
+          <label for="skills-gamedesign">Game design</label>
+        </li>
+        <li>
+          <input type="range" min="1" max="6"
+                id="skills-narration">
+          <label for="skills-narration">Narration</label>
+        </li>
+      </ul>
+    </section>
 
     <br>
 
-    <button id="create_account">Créer le compte</button>
-  </div>      
+    <input type="submit" value="Créer le compte">
+  </form>      
 </template>
