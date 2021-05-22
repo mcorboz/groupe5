@@ -1,0 +1,10 @@
+<template name="Header">
+  <div class="header">
+    <a href="{{pathFor 'Home'}}">HOME</a>
+    {{#if currentUser}}
+      <button id="logout">Log out</button>
+    {{else}}
+      <button id="login">Log in</button>
+    {{/if}}
+  </div>
+</template>

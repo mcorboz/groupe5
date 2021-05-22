@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import './Nav.html';
+import './Header.html';
 
-Template.Nav.events({
+Template.Header.events({
     'click #logout'() {
         Meteor.logout((error) => {
             if (error) {

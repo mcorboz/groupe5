@@ -8,5 +8,5 @@ import './pages/Login/Login.js';
 import './pages/Project_new/Project_new.js';
 import './pages/Project_show/Project_show.js';
 import './pages/Project_show_list/Project_show_list';
-import './components/Nav/Nav.js';
+import './components/Header/Header.js';
 import './components/contact_info/contact_info.js';
