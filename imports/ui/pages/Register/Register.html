@@ -1,21 +1,21 @@
-<template name="Profile_creation">
+<template name="Register">
     <div>
         <h1>Connexion</h1>
-        <div>Pseudonyme :</div>
+        <p>Pseudonyme :</p>
         <input type="text" id="pseudo">
 
         
-        <div>Mot de passe :</div>
+        <p>Mot de passe :</p>
         <input type="password" id="password">
         
         {{#if new}}
-        <div>Confirmation du mot de passe :</div>
+        <p>Confirmation du mot de passe :</p>
         <input type="password" id="password2">
         
-        <div>Adresse email :</div>
+        <p>Adresse email :</p>
         <input type="email" id="email">
 
-        <div>Intérêts :</div>
+        <p>Intérêts :</p>
         <ul>
             <li>
                 <span>Programmation</span>
@@ -81,7 +81,7 @@
         <br><br>
 
 
-        <div>Compétences :</div>
+        <p>Compétences :</p>
         <ul>
             <li>
                 <span>Programmation</span>
@@ -147,9 +147,10 @@
 
         <br>
         
-        <button id="create_account">Creér le compte</button>
+        <button id="create_account">Créer le compte</button>
         {{else}}
         <button id="connection">Se connecter</button>
+        <p>Pas encore de compte?</p>
         <button id="new_account">Créer un nouveau compte</button>
         {{/if}}
     </div>      
