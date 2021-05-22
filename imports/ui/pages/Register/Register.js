@@ -90,7 +90,7 @@ Template.Register.events({
                                 if (error) {
                                     alert(error.message);
                                 } else {
-                                    setTimeout(() => FlowRouter.go('Profile.show'), 200);
+                                    FlowRouter.go('Profile.show');
                                 }
                             },
                         );

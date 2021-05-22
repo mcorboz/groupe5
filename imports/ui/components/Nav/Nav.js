@@ -9,7 +9,7 @@ Template.Nav.events({
             if (error) {
                 alert(error.message);
             } else {
-                setTimeout(() => FlowRouter.go('Home'), 200);
+                FlowRouter.go('Home');
             }
         });
     },
