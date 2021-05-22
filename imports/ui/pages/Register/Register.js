@@ -1,43 +1,9 @@
 import { Template } from 'meteor/templating';
-import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import './Register.html';
 
-
-Template.Register.onCreated(function () {
-	this.new = new ReactiveVar(false);
-});
-
-Template.Register.helpers({
-	new: () => Template.instance().new.get(),
-});
-
 Template.Register.events({
-    // Ouvrir les inputs pour créer un compte
-    'click #new_account'(event, template) {
-        event.preventDefault();
-        template.new.set(!template.new.get());
-        /*
-        template.new.get()
-        ? template.new.set(false)
-        : template.new.set(true);
-        */
-    },
-    // connexion au compte lié aux infos notées
-    'click #connection'(event) {
-		event.preventDefault();
-        // récup username et mdp
-		let username = document.getElementById('pseudo').value;
-		let password = document.getElementById('password').value;
-		Meteor.loginWithPassword(username, password, (error) => {
-			if (error) {
-				alert(error.message);
-			} else {
-				setTimeout(() => FlowRouter.go('Home'), 200);
-			}
-		});
-	},
     // création d'un nouveau compte
     'click #create_account'(event) {
 		event.preventDefault();

@@ -1,157 +1,152 @@
 <template name="Register">
-    <div>
-        <h1>Connexion</h1>
-        <p>Pseudonyme :</p>
-        <input type="text" id="pseudo">
+  <div>
+    <h1>Créer un nouveau compte</h1>
 
-        
-        <p>Mot de passe :</p>
-        <input type="password" id="password">
-        
-        {{#if new}}
-        <p>Confirmation du mot de passe :</p>
-        <input type="password" id="password2">
-        
-        <p>Adresse email :</p>
-        <input type="email" id="email">
+    <p>Vous avez déjà un compte? <a href="{{pathFor 'Login'}}">Connectez-vous</a></p>
 
-        <p>Intérêts :</p>
-        <ul>
-            <li>
-                <span>Programmation</span>
-                <select name="interets" id="IProgrammation">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Dessin</span>
-                <select name="interets" id="IDessin">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Sound Design</span>
-                <select name="interets" id="ISound Design">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Game Design</span>
-                <select name="interets" id="IGame Design">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Narration</span>
-                <select name="interets" id="INarration">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-        </ul>
-        <br><br>
+    <p>Pseudonyme :</p>
+    <input type="text" id="pseudo">
 
+    <p>Mot de passe :</p>
+    <input type="password" id="password">
 
-        <p>Compétences :</p>
-        <ul>
-            <li>
-                <span>Programmation</span>
-                <select name="competences" id="CProgrammation">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Dessin</span>
-                <select name="competences" id="CDessin">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Sound Design</span>
-                <select name="competences" id="CSound Design">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Game Design</span>
-                <select name="competences" id="CGame Design">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-            <li>
-                <span>Narration</span>
-                <select name="competences" id="CNarration">
-                    <option value="-">-</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-            </li>
-        </ul>
+    <p>Confirmation du mot de passe :</p>
+    <input type="password" id="password2">
 
-        <br>
-        
-        <button id="create_account">Créer le compte</button>
-        {{else}}
-        <button id="connection">Se connecter</button>
-        <p>Pas encore de compte?</p>
-        <button id="new_account">Créer un nouveau compte</button>
-        {{/if}}
-    </div>      
+    <p>Adresse email :</p>
+    <input type="email" id="email">
+
+    <p>Intérêts :</p>
+    <ul>
+      <li>
+        <span>Programmation</span>
+        <select name="interets" id="IProgrammation">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Dessin</span>
+        <select name="interets" id="IDessin">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Sound Design</span>
+        <select name="interets" id="ISound Design">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Game Design</span>
+        <select name="interets" id="IGame Design">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Narration</span>
+        <select name="interets" id="INarration">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+    </ul>
+    <br><br>
+
+    <p>Compétences :</p>
+    <ul>
+      <li>
+        <span>Programmation</span>
+        <select name="competences" id="CProgrammation">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Dessin</span>
+        <select name="competences" id="CDessin">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Sound Design</span>
+        <select name="competences" id="CSound Design">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Game Design</span>
+        <select name="competences" id="CGame Design">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+      <li>
+        <span>Narration</span>
+        <select name="competences" id="CNarration">
+          <option value="-">-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </li>
+    </ul>
+
+    <br>
+
+    <button id="create_account">Créer le compte</button>
+  </div>      
 </template>
