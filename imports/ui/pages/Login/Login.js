@@ -5,9 +5,11 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import './Login.html';
 
 Template.Login.events({
-    'click #connection'(event) {
+    'submit .login'(event) {
+		// don't do default HTTP form submission
 		event.preventDefault();
-		const username = document.getElementById('pseudo').value;
+
+		const username = document.getElementById('username').value;
 		const password = document.getElementById('password').value;
 		Meteor.loginWithPassword(username, password, (error) => {
 			if (error) {

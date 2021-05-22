@@ -1,15 +1,17 @@
 <template name="Login">
-  <h1>Connection</h1>
+  <form action="" class="login">
+    <h1>Connection</h1>
 
-  <p>Pseudonyme:</p>
-  <input type="text" id="pseudo">
+    <p>Pas encore de compte? <a href="{{pathFor 'Register'}}">Créer un compte</a></p>
 
-  <p>Mot de passe :</p>
-  <input type="password" id="password">
-        
-  <br>
-  
-  <button id="connection">Se connecter</button>
+    <p>Nom d'utilisateur.ice:</p>
+    <input type="text" id="username">
 
-  <p>Pas encore de compte? <a href="{{pathFor 'Register'}}">Créer un compte</a></p>
+    <p>Mot de passe :</p>
+    <input type="password" id="password">
+
+    <br>
+    
+    <input type="submit" value="Se connecter">
+  </form>
 </template>
