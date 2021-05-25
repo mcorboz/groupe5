@@ -16,7 +16,7 @@ function previewImage() {
     const actualImage = input.files;
     if(actualImage.length === 0) {
         const nothing = document.createElement('p');
-        rien.textContent = 'Aucune image sélectionnée';
+        nothing.textContent = 'Aucune image sélectionnée';
         preview.appendChild(nothing);
     } else {
       const selection = document.createElement('ol');
@@ -27,7 +27,7 @@ function previewImage() {
           const nothing = document.createElement('p');
 
           if(validFileType(file)) {
-              rien.textContent = `Nom image ${file.name}, taille de l'image ${returnFileSize(file.size)}.`;
+              nothing.textContent = `Nom image ${file.name}, taille de l'image ${returnFileSize(file.size)}.`;
               const image = document.createElement('img');
               image.src = URL.createObjectURL(file);
 
@@ -35,7 +35,7 @@ function previewImage() {
               selectionItem.appendChild(nothing);
           } else {
             nothing.textContent = `Nom image ${file.name}: pas un fichier valide. Veuillez changer votre sélection.`;
-            selectionItem.appendChild(rien);  
+            selectionItem.appendChild(nothing);  
           }
 
           selection.appendChild(selectionItem);
