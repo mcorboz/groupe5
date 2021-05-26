@@ -3,6 +3,7 @@
 import './App/App.js';
 import './pages/Home_page/Home_page.js';
 import './pages/Profile_page/Profile_page.js';
+import './pages/Profile_other/Profile_other.js';
 import './pages/Register/Register.js';
 import './pages/Login/Login.js';
 import './pages/Project_new/Project_new.js';
