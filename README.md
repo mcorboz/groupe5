@@ -1,4 +1,4 @@
-# Plateforme pour rassembler acteur·trice·s potentiel·le·s du jeu vidéo local.
+# HelvetiaDevs, une plateforme pour rassembler acteur·trice·s potentiel·le·s du jeu vidéo local.
 
 ## Description du projet
 
