@@ -8,7 +8,7 @@ const preview = document.querySelector('.preview');
 input.addEventListener('change', previewImage);
 
 //function pour afficher l'image en previsualisation
-function previewImage() {
+Template.depot_image.onCreated(function previewImage() {
     while(preview.firstChild) {
         preview.removeChild(preview.firstChild);
     }
@@ -41,7 +41,7 @@ function previewImage() {
           selection.appendChild(selectionItem);
       }
     }
-}
+});
 
 //From https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types parce que je connais pas les types moi-même
 const fileTypes = [
@@ -55,12 +55,12 @@ const fileTypes = [
 ];
 
 //function pour accorder les fichiers corrects selon les types
-function validFileType(file) {
+Template.depot_image.onCreated(function validFileType(file) {
     return fileTypes.includes(file.type);
-}
+});
 
 //function pour montrer la taille de l'image (et donc déduction de son temps d'importation)
-function returnFileSize(number) {
+Template.depot_image.onCreated(function returnFileSize(number) {
     if(number < 1024) {
         return number + 'bytes';
     } else if(number > 1024 && number < 1048576) {
@@ -68,4 +68,4 @@ function returnFileSize(number) {
     } else if (number > 1048576) {
         return (number/1048576).toFixed(1) + 'MB';
     }
-}
+});
