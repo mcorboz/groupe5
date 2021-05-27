@@ -2,7 +2,7 @@ import './Profile_page.html';
 
 //console.log(Meteor.user().username); what's the problemmmmm
 //don't even know what I'm trying here anymore
-//Meteor.users.findOne( { username : FlowRouter.getParam('_username') } );
+//Meteor.users.findOne( { username : FlowRouter.getParam('username') } );
 //FlowRouter.go('Login', {_username: Meteor.user().username});
 
 
