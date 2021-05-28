@@ -69,4 +69,11 @@ Template.Profile_page.helpers({
             return Meteor.user().profile.skills[4][1];
         };
     },
+    // Check which projects have been created by the user
+    /* project: Projects.find().forEach(project => {
+        if (Meteor.user()._id == project.creator){
+
+        }
+    }), */
 })
+
