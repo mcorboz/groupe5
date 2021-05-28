@@ -3,9 +3,14 @@ import './Profile_page.html';
 //console.log(Meteor.user().username); what's the problemmmmm
 //don't even know what I'm trying here anymore
 //Meteor.users.findOne( { username : FlowRouter.getParam('username') } );
-//FlowRouter.go('Login', {_username: Meteor.user().username});
+//FlowRouter.go('profile', {_username: Meteor.user().username});
 
-
+// If user not connected, redirect to login page
+if (!Meteor.user()) {
+    alert('Vous devez être connecté·e pour voir cette page');
+    FlowRouter.go('Login');
+}
+			
 Template.Profile_page.helpers({
     username: function(){
         if(Meteor.user()){
