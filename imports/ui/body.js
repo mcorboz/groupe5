@@ -11,3 +11,4 @@ import './pages/Project_show/Project_show.js';
 import './pages/Project_show_list/Project_show_list';
 import './components/Header/Header.js';
 import './components/contact_info/contact_info.js';
+import './pages/Settings/Settings.js';
