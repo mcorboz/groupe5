@@ -17,4 +17,5 @@ Projects.schema = new SimpleSchema({
     'technicalTags.$': { type: String },
     genreTags: { type: Array },
     'genreTags.$': { type: String },
+    creator: { type: String},
 });

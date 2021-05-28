@@ -13,6 +13,9 @@ Template.Project_new.events({
         let name = document.getElementById("project_name").value;
         let dateStart = document.getElementById("date_start").value;
         let dateEnd = document.getElementById("date_end").value;
+        
+        // Récupérer username de la personne qui crée le projet
+        let creator = String(Meteor.user()._id);
 
         let checkedTechnicalTags = document.querySelectorAll('input[name="technical"]:checked');
         let technicalTags = [];
@@ -26,6 +29,7 @@ Template.Project_new.events({
             genreTags.push(element.value);
         })
 
+
         // create the project object that we will send
         let projet = {
             name,
@@ -33,6 +37,7 @@ Template.Project_new.events({
             dateEnd,
             technicalTags,
             genreTags,
+            creator,
         };
 
         Meteor.call('projects.add', projet, (err, res) => {
