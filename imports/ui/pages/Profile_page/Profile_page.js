@@ -5,11 +5,13 @@ import './Profile_page.html';
 //Meteor.users.findOne( { username : FlowRouter.getParam('username') } );
 //FlowRouter.go('profile', {_username: Meteor.user().username});
 
-// If user not connected, redirect to login page
-if (!Meteor.user()) {
-    alert('Vous devez être connecté·e pour voir cette page');
-    FlowRouter.go('Login');
-}
+Template.Profile_page.onRendered(function () {
+    // If user not connected, redirect to login page
+    if (!Meteor.user()) {
+        alert("Vous devez être connecté·e pour voir cette page");
+        FlowRouter.go("Login");
+    }
+});
 			
 Template.Profile_page.helpers({
     username: function(){
