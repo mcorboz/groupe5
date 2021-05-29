@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Accounts } from 'meteor/accounts-base';
 
 import './Register.html';
 
@@ -68,17 +69,18 @@ Template.Register.events({
             username,
             password,
             email,
-            //createdAt: new Date, // FIXME is this necessary?
             profile: {
                 interests: interests_selection,
                 skills: skills_selection,
             },
         };
+
         Accounts.createUser(user, (error) => {
             if (error) {
                 alert(error.message);
             } else {
-                FlowRouter.go('Profile.show');
+                const params = { username: user.username };
+                FlowRouter.go('Profile.show', params);
             }
         });
 	},

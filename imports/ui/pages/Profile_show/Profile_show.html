@@ -1,0 +1,10 @@
+<template name="Profile_show">
+  {{#if userExists}}
+    {{#if isOwnProfile}}
+      <p>You are viewing your own profile!</p>
+    {{/if}}
+    <p>username: {{username}}</p>
+  {{else}}
+    {{>NotFound}}
+  {{/if}}
+</template>
