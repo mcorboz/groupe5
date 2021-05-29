@@ -3,6 +3,7 @@
     <a href="{{pathFor 'Home'}}">HOME</a>
     {{#if currentUser}}
       <button id="logout">Se déconnecter</button>
+      <span>Bonjour {{currentUserName}}!</span>
     {{else}}
       <button id="login">Se connecter</button>
     {{/if}}

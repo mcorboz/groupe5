@@ -5,3 +5,15 @@ import '/lib/router.js';
 // or at least i haven't figured out another way, seems
 // clean enough
 import '/imports/ui/body.js';
+
+Template.registerHelper('currentUserName', function() {
+    return Meteor.user().username;
+});
+
+// FIXME this is very bad. I hate this. FUCk meteor. aahhh
+Template.registerHelper('currentUserNameWrapped', function() {
+    return {
+        username: Meteor.user().username,
+    };
+});
+

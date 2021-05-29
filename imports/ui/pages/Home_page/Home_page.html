@@ -3,7 +3,7 @@
     <h1>Bienvenue!</h1>
     {{#if currentUser}}
       <!-- FIXME need to improve pathFor for next line to work -->
-      <p><a href="{{pathFor 'Profile.show'}}">Voir mon profil</a></p>
+      <p><a href="{{pathFor 'Profile.show' (currentUserNameWrapped)}}">Voir mon profil</a></p>
       <p><a href="{{pathFor 'Project.new'}}">Créer un projet</a></p>
       <p><a href="{{pathFor 'Settings'}}">Paramètres</a></p>
     {{else}}
