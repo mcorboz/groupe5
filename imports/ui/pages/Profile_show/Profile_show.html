@@ -4,11 +4,23 @@
       <p>Vous voyez votre propre page de profil!</p>
     {{/if}}
     <h2>Pseudonyme: {{username}}</h2>
-    <p>Adresse e-mail: {{email}}</p>
-    <p>Intérêts:</p>
-    <p>{{interests}}</p>
-    <p>Compétences:</p>
-    <p>{{skills}}</p>
+    <h4>Adresse e-mail: {{email}}</h4>
+    <h4>Intérêts:</h4>
+    <div>
+      Programmation: {{prog_interests}}<br>
+      Dessin: {{visuals_interests}}<br>
+      Sound design: {{sounddesign_interests}}<br>
+      Game design: {{gamedesign_interests}}<br>
+      Narration: {{narrative_interests}}
+    </div>
+    <h4>Compétences:</h4>
+    <div>
+      Programmation: {{prog_skills}}<br>
+      Dessin: {{visuals_skills}}<br>
+      Sound design: {{sounddesign_skills}}<br>
+      Game design: {{gamedesign_skills}}<br>
+      Narration: {{narrative_skills}}
+    </div>
   {{else}}
     {{>NotFound}}
   {{/if}}

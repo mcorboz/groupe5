@@ -30,12 +30,44 @@ Template.Profile_show.helpers({
         return getUser().emails[0].address;
     },
 
-    interests: function() {
-        return getUser().profile.interests;
+    prog_interests: function() {
+        return getUser().profile.interests[0][1];
     },
 
-    skills: function() {
-        return getUser().profile.skills;
-    }
+    visuals_interests: function() {
+        return getUser().profile.interests[1][1];
+    },
+    
+    sounddesign_interests: function() {
+        return getUser().profile.interests[2][1];
+    },
+
+    gamedesign_interests: function() {
+        return getUser().profile.interests[3][1];
+    },
+
+    narrative_interests: function() {
+        return getUser().profile.interests[4][1];
+    },
+
+    prog_skills: function() {
+        return getUser().profile.skills[0][1];
+    },
+
+    visuals_skills: function() {
+        return getUser().profile.skills[1][1];
+    },
+    
+    sounddesign_skills: function() {
+        return getUser().profile.skills[2][1];
+    },
+
+    gamedesign_skills: function() {
+        return getUser().profile.skills[3][1];
+    },
+
+    narrative_skills: function() {
+        return getUser().profile.skills[4][1];
+    },
 });
 
