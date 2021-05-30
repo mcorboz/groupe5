@@ -25,5 +25,17 @@ Template.Profile_show.helpers({
     username: function() {
         return getUser().username;
     },
+
+    email: function() {
+        return getUser().emails[0].address;
+    },
+
+    interests: function() {
+        return getUser().profile.interests;
+    },
+
+    skills: function() {
+        return getUser().profile.skills;
+    }
 });
 

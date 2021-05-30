@@ -1,9 +1,14 @@
 <template name="Profile_show">
   {{#if userExists}}
     {{#if isOwnProfile}}
-      <p>You are viewing your own profile!</p>
+      <p>Vous voyez votre propre page de profil!</p>
     {{/if}}
-    <p>username: {{username}}</p>
+    <h2>Pseudonyme: {{username}}</h2>
+    <p>Adresse e-mail: {{email}}</p>
+    <p>Intérêts:</p>
+    <p>{{interests}}</p>
+    <p>Compétences:</p>
+    <p>{{skills}}</p>
   {{else}}
     {{>NotFound}}
   {{/if}}
